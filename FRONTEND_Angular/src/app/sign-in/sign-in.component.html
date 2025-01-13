@@ -1,0 +1,111 @@
+<app-navbar></app-navbar>
+
+<!-- Section: Design Block -->
+<section class="vh-100 d-flex flex-column">
+  <!-- Jumbotron -->
+  <div class="px-0 py-5 px-md-5 text-center text-lg-start flex-grow-1" style="background-color: white">
+    <div class="container-fluid h-100">
+      <div class="row gx-lg-5 align-items-center h-100">
+        <!-- Left Content -->
+        <div class="col-lg-6 mb-5 mb-lg-0 px-5">
+          <h1 class="my-5 display-3 fw-bold ls-tight">
+            The best offer <br />
+            <span class="text-primary">for your business</span>
+          </h1>
+          <p style="color: hsl(217, 10%, 50.8%)">
+            Experience top-notch services for all your repair and maintenance needs.
+            Sign-In to access exclusive features for service management!
+          </p>
+        </div>
+
+        <!-- Right Content (Sign-in Form) -->
+        <div class="col-lg-6 d-flex align-items-center justify-content-center">
+          <div class="card shadow-lg" style="max-width: 500px; width: 100%;">
+            <div class="card-body py-5 px-md-5">
+              <form [formGroup]="signInForm" (ngSubmit)="loginUser()">
+                <h2 class="text-center mb-4">Sign-In</h2>
+           
+                <!-- User ID Field -->
+                <div class="mb-3">
+                  <label for="userId" class="form-label">User ID <span class="text-danger">*</span></label>
+                  <input
+                    class="form-control"
+                    id="userId"
+                    type="text"
+                    formControlName="userId"
+                    placeholder="Enter your User ID"
+                  />
+                  <div *ngIf="signInForm.get('userId')?.invalid && signInForm.get('userId')?.touched" class="text-danger">
+                    User ID is required.
+                  </div>
+                </div>
+
+                <!-- Password Field -->
+                <div class="mb-3 position-relative">
+                  <label for="password" class="form-label">Password <span class="text-danger">*</span></label>
+                  <input
+                    class="form-control"
+                    id="password"
+                    [type]="showPassword ? 'text' : 'password'"
+                    formControlName="password"
+                    placeholder="Enter your password"
+                  />
+                  <div *ngIf="signInForm.get('password')?.invalid && signInForm.get('password')?.touched" class="text-danger">
+                    Password is required.
+                  </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-primary w-100" [disabled]="signInForm.invalid">Sign-In</button>
+
+                <!-- Display Error Message -->
+                <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+                  {{ errorMessage }}
+                </div>
+
+                <!-- Additional Links -->
+                <div class="text-center mt-4">
+                  <p>Don't have an account? <a [routerLink]="'/sign-up'">Sign Up</a></p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Jumbotron -->
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-white py-4 border-top border-light mt-auto">
+  <div class="container text-center">
+    <div class="row">
+      <!-- Company Info (Left) -->
+      <div class="col-md-4 mb-2 text-left">
+        <h5>Company</h5>
+        <p>123 Main St, Suite 400</p>
+        <p>City, State, 12345</p>
+      </div>
+      
+      <!-- Contact Info (Center) -->
+      <div class="col-md-4 mb-2 text-center">
+        <h5>Contact Us</h5>
+        <p>Phone: +1 234 567 890</p>
+        <p>Email: <a href="mailto:info@company.com" class="text-white">info@company.com</a></p>
+      </div>
+      
+      <!-- Social Media (Right) -->
+      <div class="col-md-4 mb-2 text-right">
+        <h5>Follow Us</h5>
+        <p>Instagram: smsatyourservice</p>
+        <p>Twitter: smsatX</p>
+        <a href="#" class="text-white mx-2"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <!-- Copyright Notice -->
+    <p class="mb-0 mt-3">© 2024 Your Company. All Rights Reserved.</p>
+  </div>
+</footer>

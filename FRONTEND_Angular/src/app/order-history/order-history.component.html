@@ -1,0 +1,79 @@
+<app-navbar></app-navbar>
+
+<div class="order-history-container">
+  <h2 class="text-center mb-4">Order History</h2>
+
+  <!-- Search Filters -->
+  <div class="search-filters mb-4">
+    <label for="search">Search:</label> <br>
+    <input type="text" id="search" class="form-control" [(ngModel)]="searchText" placeholder="Search by Name, Booking ID, Service, Sub-Service" />
+  </div>
+
+  <!-- Orders Table -->
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Booking ID</th>
+        <th>Customer Name</th>
+        <th>Service</th>
+        <th>Sub-Service</th>
+        <th>Date</th>
+        <th>Vendor</th>
+        <th>Amount</th>
+        <th>Status</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let booking of filteredBookings()">
+        <td>{{ booking.id }}</td>
+        <td>{{ booking.customerName }}</td>
+        <td>{{ booking.service }}</td>
+        <td>{{ booking.subService }}</td>
+        <td>{{ booking.date | date: 'shortDate' }}</td>
+        <td>{{ booking.vendor }}</td>
+        <td>{{ booking.amount }}</td>
+        <td>{{ booking.status }}</td>
+      </tr>
+      <tr *ngIf="filteredBookings().length === 0">
+        <td colspan="8" class="text-center">No bookings found</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- Footer -->
+<footer class="bg-dark text-white py-4 border-top border-light">
+  <div class="container text-center">
+    <div class="row">
+      <!-- Company Info (Left) -->
+      <div class="col-md-4 mb-2 text-left">
+        <h5>Company</h5>
+        <p>123 Main St, Suite 400</p>
+        <p>City, State, 12345</p>
+      </div>
+      
+      <!-- Contact Info (Center) -->
+      <div class="col-md-4 mb-2 text-center">
+        <h5>Contact Us</h5>
+        <p>Phone: +1 234 567 890</p>
+        <p>Email: <a href="mailto:info@company.com" class="text-white">info@company.com</a></p>
+      </div>
+      
+      <!-- Social Media (Right) -->
+      <div class="col-md-4 mb-2 text-right">
+        <h5>Follow Us</h5>
+        <p>Instagram: smsatyourservice</p>
+        <p>Twitter: smsatX</p>
+        <a href="#" class="text-white mx-2"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <!-- Copyright Notice -->
+    <p class="mb-0 mt-3">© 2024 Your Company. All Rights Reserved.</p>
+  </div>
+</footer>
+
+

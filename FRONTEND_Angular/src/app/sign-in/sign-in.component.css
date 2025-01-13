@@ -1,0 +1,185 @@
+/* Ensure full height and width */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.vh-100 {
+  min-height: 100vh;
+}
+
+.vw-100 {
+  min-width: 100vw;
+}
+
+/* Center the content */
+.container-fluid {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.row {
+  height: 100%;
+}
+
+.card {
+  max-width: 500px; /* Maximum width */
+  width: 100%; /* Full width on smaller screens */
+  margin: 0 auto;
+}
+
+/* Styling the form */
+.form-control {
+  border-radius: 5px;
+  padding: 12px 15px;
+  width: 100%;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+}
+
+/* Button Styling */
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  width: 100%;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Additional Links */
+.text-center a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.text-center a:hover {
+  text-decoration: underline;
+}
+
+/* Error message styling */
+.alert {
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .col-lg-6 {
+    width: 100%;
+  }
+}
+footer {
+  background-color: #343a40;
+  border-top: 3px solid #f8f9fa;
+  padding: 5px 0; /* Reduced padding to make footer thinner */
+}
+
+footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+footer h5 {
+  font-size: 0.8rem; /* Smaller font size for the heading */
+  font-weight: bold;
+  margin-bottom: 0.25rem; /* Reduced space below the heading */
+}
+
+footer p {
+  font-size: 0.7rem; /* Smaller font size for paragraphs */
+  margin: 0.1rem 0; /* Reduced margin for paragraphs */
+}
+
+footer .social-icons a {
+  font-size: 1rem; /* Smaller icons */
+  text-decoration: none;
+}
+
+footer .social-icons a:hover {
+  color: #ddd;
+}
+
+footer a {
+  text-decoration: none;
+  color: inherit;
+}
+
+footer .row {
+  margin-bottom: 0.25rem; /* Reduced space between rows */
+}
+
+footer .container p {
+  margin-top: 0.25rem; /* Reduced space above the copyright */
+}
+
+/* Aligning content left, center, and right */
+footer .col-md-4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+footer .text-left {
+  text-align: left;
+}
+
+footer .text-center {
+  text-align: center;
+}
+
+footer .text-right {
+  text-align: right;
+}
+/* Main Content */
+section.vh-100 {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures section takes full height */
+}
+
+section.vh-100 .container-fluid {
+  flex-grow: 1; /* Allow the main content to grow and take up available space */
+}
+
+/* Footer */
+footer {
+  margin-top: auto; /* Push footer to the bottom of the page */
+}
+/* Main Section and Flexbox Layout */
+section.vh-100 {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures section takes full height */
+}
+
+section.vh-100 .container-fluid {
+  flex-grow: 1; /* Ensure the container stretches to fill remaining space */
+}
+
+footer {
+  margin-top: auto; /* This ensures the footer is pushed to the bottom */
+}
+
+/* Optional: You can adjust padding or margins for specific elements if needed */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* For Footer alignment and spacing */
+footer .container {
+  padding: 0 15px;
+}
