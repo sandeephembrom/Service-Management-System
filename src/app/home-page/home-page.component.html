@@ -1,0 +1,184 @@
+<!-- Navbar Start -->
+<div class="container-fluid fixed-top">
+  <div class="container px-0">
+    <nav class="navbar navbar-light bg-white navbar-expand-xl">
+      <a href="#" class="navbar-brand">
+        <h1 class="text-primary display-6">SMS</h1>
+      </a>
+      <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        Menu <span class="fa fa-bars text-primary"></span>
+      </button>
+      <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
+        <div class="navbar-nav mx-auto">
+          <a href="#" class="nav-item nav-link active">Home</a>
+
+          <!-- Conditional Routing for Order History based on User Role -->
+          <a class="nav-item nav-link" *ngIf="isLoggedIn" [routerLink]="'/order-history'">
+            Order History
+          </a>
+          
+          <a href="#footer" class="nav-item nav-link">Contact</a>
+
+          <!-- Logout link only visible if the user is logged in -->
+          <a class="nav-item nav-link" *ngIf="isLoggedIn" style="cursor: pointer;" (click)="logout()">Logout</a>
+        </div>
+
+        <div class="d-flex m-3 me-0">
+          <!-- Welcome message -->
+          <h5 id="usernameDisplay" class="welcomeUser" *ngIf="userLoggedIn">
+            <!-- Welcome{{ currentUser?.username || '' }}! -->
+          </h5>
+
+          <!-- Sign-in and sign-up buttons -->
+          <button *ngIf="!userLoggedIn" style="width: 100px; height: 36px; margin:4px;" id="goSignInBtn" [routerLink]="'/sign-in'">Sign In</button>
+          <button *ngIf="!userLoggedIn" style="width: 100px; height: 36px; margin:4px;" id="goSignUpBtn" (click)="navigateToSignUp()">Sign Up</button>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>
+<!-- Navbar End -->
+
+<!-- Hero Section -->
+<div class="container-fluid py-5 mb-5 hero-header" id="hero">
+  <div class="container py-5">
+    <div class="row g-5 align-items-center">
+      <div class="col-md-12 col-lg-7">
+        <h1 style="margin-top: 80px;" class="mb-5 display-3 text-primary">Reliable Services <br>At Your Doorstep</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Hero End -->
+
+<!-- Services Section Start-->
+<div class="container-fluid fruite" id="services">
+  <div class="container py-5">
+    <div class="tab-class text-center">
+      <div class="row g-4">
+        <div class="col-lg-4 text-start">
+          <h1 style="margin-bottom: 20px;">Our Services</h1>
+        </div>
+      </div>
+      <div class="tab-content">
+        <div id="tab-1" class="tab-pane fade show p-0 active">
+          <div class="row g-4">
+            <!-- AC Service -->
+            <div 
+              class="col-md-6 col-lg-4 col-xl-3" 
+              [routerLink]="isLoggedIn ? ['/booking-form', {service: 'AC'}] : null" 
+              [ngClass]="{'disabled-service': !isLoggedIn}" 
+              style="cursor: pointer;">
+              <div class="rounded position-relative fruite-item">
+                <div class="fruite-img">
+                  <img 
+                    src="https://as2.ftcdn.net/v2/jpg/05/11/92/95/1000_F_511929539_hkrzPKGI6pEA8TwUfrwrB0g73FyEaowM.jpg" 
+                    class="img-fluid w-100 rounded-top" 
+                    alt="AC & Appliances Repair">
+                </div>
+                <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                  <h5>AC & Appliances Repair</h5>
+                </div>
+              </div>
+            </div>
+            <!-- Cleaning Service -->
+            <div 
+              class="col-md-6 col-lg-4 col-xl-3" 
+              [routerLink]="isLoggedIn ? ['/booking-form', {service: 'Cleaning'}] : null" 
+              [ngClass]="{'disabled-service': !isLoggedIn}" 
+              style="cursor: pointer;">
+              <div class="rounded position-relative fruite-item">
+                <div class="fruite-img">
+                  <img 
+                    src="https://t4.ftcdn.net/jpg/03/06/99/87/240_F_306998742_5awR6uVsZ8dRNdHHnj0tnm4sGUDBAxQ5.jpg" 
+                    class="img-fluid w-100 rounded-top" 
+                    alt="House Cleaning">
+                </div>
+                <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                  <h5>House Cleaning</h5>
+                </div>
+              </div>
+            </div>
+            <!-- Vehicle Service -->
+            <div 
+              class="col-md-6 col-lg-4 col-xl-3" 
+              [routerLink]="isLoggedIn ? ['/booking-form', {service: 'Vehicle'}] : null" 
+              [ngClass]="{'disabled-service': !isLoggedIn}" 
+              style="cursor: pointer;">
+              <div class="rounded position-relative fruite-item">
+                <div class="fruite-img">
+                  <img 
+                    src="https://t4.ftcdn.net/jpg/05/18/13/69/240_F_518136924_9q60nudwE0Hys7xgFPRvK4glJIqAHqy0.jpg" 
+                    class="img-fluid w-100 rounded-top" 
+                    alt="Vehicle Repair Service">
+                </div>
+                <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                  <h5>Vehicle Repair Service</h5>
+                </div>
+              </div>
+            </div>
+            <!-- Pickup/Drop Service -->
+            <div 
+              class="col-md-6 col-lg-4 col-xl-3" 
+              [routerLink]="isLoggedIn ? ['/booking-form', {service: 'PickupDrop'}] : null" 
+              [ngClass]="{'disabled-service': !isLoggedIn}" 
+              style="cursor: pointer;">
+              <div class="rounded position-relative fruite-item">
+                <div class="fruite-img">
+                  <img 
+                    style="height: 175px;" 
+                    src="https://t4.ftcdn.net/jpg/09/21/78/05/240_F_921780563_Cn8ThVl9OSmiCcq0nIJtQglGPqm5snAH.jpg" 
+                    class="img-fluid w-100 rounded-top" 
+                    alt="Product Pickup/Drop">
+                </div>
+                <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                  <h5>Product <br> Pickup/Drop</h5>
+                </div>
+              </div>
+            </div>
+            <!-- Prompt for Login -->
+            <div 
+              class="col-12 text-center" 
+              *ngIf="!isLoggedIn">
+              <h5 class="text-danger">Please log in to access our services.</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Services Section End-->
+
+<!-- Footer -->
+<footer class="bg-dark text-white py-4 border-top border-light">
+  <div class="container text-center">
+    <div class="row">
+      <!-- Company Info (Left) -->
+      <div class="col-md-4 mb-2 text-left">
+        <h5>Company</h5>
+        <p>123 Main St, Suite 400</p>
+        <p>City, State, 12345</p>
+      </div>
+      
+      <!-- Contact Info (Center) -->
+      <div class="col-md-4 mb-2 text-center">
+        <h5>Contact Us</h5>
+        <p>Phone: +1 234 567 890</p>
+        <p>Email: <a href="mailto:info@company.com" class="text-white">info@company.com</a></p>
+      </div>
+      
+      <!-- Social Media (Right) -->
+      <div class="col-md-4 mb-2 text-right">
+        <h5>Follow Us</h5>
+        <p>Instagram: smsatyourservice</p>
+        <p>Twitter: smsatX</p>
+        <a href="#" class="text-white mx-2"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <!-- Copyright Notice -->
+    <p class="mb-0 mt-3">© 2024 Your Company. All Rights Reserved.</p>
+  </div>
+</footer>

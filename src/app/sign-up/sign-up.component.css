@@ -1,0 +1,146 @@
+.main-section {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.container-fluid {
+  padding: 15px;
+}
+
+.card.form-container {
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.card-body {
+  padding: 30px;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+input, select, textarea {
+  font-size: 0.9rem;
+}
+
+button {
+  font-size: 1rem;
+}
+
+small.text-muted {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.8rem;
+}
+
+.input-group-text {
+  cursor: pointer;
+}
+
+.bi-eye, .bi-eye-slash {
+  font-size: 18px;
+}
+footer {
+  background-color: #343a40;
+  border-top: 3px solid #f8f9fa;
+  padding: 5px 0; /* Reduced padding to make footer thinner */
+}
+
+footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+footer h5 {
+  font-size: 0.8rem; /* Smaller font size for the heading */
+  font-weight: bold;
+  margin-bottom: 0.25rem; /* Reduced space below the heading */
+}
+
+footer p {
+  font-size: 0.7rem; /* Smaller font size for paragraphs */
+  margin: 0.1rem 0; /* Reduced margin for paragraphs */
+}
+
+footer .social-icons a {
+  font-size: 1rem; /* Smaller icons */
+  text-decoration: none;
+}
+
+footer .social-icons a:hover {
+  color: #ddd;
+}
+
+footer a {
+  text-decoration: none;
+  color: inherit;
+}
+
+footer .row {
+  margin-bottom: 0.25rem; /* Reduced space between rows */
+}
+
+footer .container p {
+  margin-top: 0.25rem; /* Reduced space above the copyright */
+}
+
+/* Aligning content left, center, and right */
+footer .col-md-4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+footer .text-left {
+  text-align: left;
+}
+
+footer .text-center {
+  text-align: center;
+}
+
+footer .text-right {
+  text-align: right;
+}
+
+section.vh-100 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensures the content fills the space */
+  min-height: 100vh;
+  padding-bottom: 0; /* Removes extra padding */
+}
+
+footer.mt-auto {
+  margin-top: auto; /* This ensures the footer stays at the bottom */
+}
+/* Main Section */
+section.vh-100 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh; /* Ensures the section takes full height */
+}
+
+/* Footer styling */
+footer.mt-auto {
+  margin-top: auto; /* Ensures footer is pushed to the bottom */
+}
+/* Main Content */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;  /* Ensure section takes full height */
+}
+
+footer {
+  margin-top: auto; /* Ensure footer stays at the bottom */
+}
+
